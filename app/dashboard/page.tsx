@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Nav } from "../components/Nav";
 import { Score } from "../components/Score";
 import { SuggestionCard } from "../components/SuggestionCard";
@@ -129,8 +130,15 @@ export default function DashboardPage() {
                   <span>Owner: {deal.owner}</span>
                   <span>{deal.lastActivity}</span>
                 </div>
-                <div className="mt-3">
+                <div className="mt-3 flex items-center justify-between">
                   <MeddicPills completed={deal.meddic as any} readOnly />
+                  <Link
+                    href={`/dashboard/${deal.id}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs font-semibold text-[#B8A060] hover:text-[#0F0F0F] transition-colors shrink-0 ml-3"
+                  >
+                    View →
+                  </Link>
                 </div>
               </button>
             ))}
