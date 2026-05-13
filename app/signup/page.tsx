@@ -34,7 +34,6 @@ export default function SignupPage() {
           <p className="text-sm text-[#0F0F0F]/50 mt-1">Set up your account in 3 steps</p>
         </div>
 
-        {/* Step indicator */}
         <div className="flex items-center gap-2 mb-8">
           {STEPS.map((s, i) => (
             <div key={s} className="flex items-center gap-2 flex-1">

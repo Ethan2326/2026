@@ -75,7 +75,6 @@ export default function SettingsPage() {
           ))}
         </div>
 
-        {/* Profile */}
         {tab === "profile" && (
           <form onSubmit={handleSave} className="flex flex-col gap-5 max-w-lg">
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
@@ -142,7 +141,6 @@ export default function SettingsPage() {
           </form>
         )}
 
-        {/* Integrations */}
         {tab === "integrations" && (
           <div className="grid sm:grid-cols-2 gap-4">
             {integrations.map((intg) => (
@@ -178,7 +176,6 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* Notifications */}
         {tab === "notifications" && (
           <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)] max-w-lg">
             <h2 className="text-sm font-bold text-[#0F0F0F] mb-5">Email & push notifications</h2>
@@ -215,7 +212,6 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* Team */}
         {tab === "team" && (
           <div className="flex flex-col gap-4 max-w-2xl">
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">

@@ -51,7 +51,6 @@ export default function AnalyticsPage() {
           <p className="text-sm text-[#0F0F0F]/50 mt-0.5">Pipeline health · Q2 2026</p>
         </div>
 
-        {/* KPI strip */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {metrics.map((m) => (
             <div
@@ -68,7 +67,6 @@ export default function AnalyticsPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          {/* Pipeline by stage */}
           <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
             <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-6">
               Pipeline by Stage
@@ -97,7 +95,6 @@ export default function AnalyticsPage() {
             </div>
           </div>
 
-          {/* Wins by month */}
           <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
             <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-6">
               Closed Won by Month
@@ -120,7 +117,6 @@ export default function AnalyticsPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
-          {/* Score distribution */}
           <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
             <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-6">
               Deal Score Distribution
@@ -147,7 +143,6 @@ export default function AnalyticsPage() {
             </div>
           </div>
 
-          {/* Health overview */}
           <div className="bg-[#0F0F0F] rounded-2xl p-6">
             <p className="text-xs font-semibold text-[#F8F7F4]/40 uppercase tracking-widest mb-6">
               Pipeline Health Score
@@ -172,7 +167,6 @@ export default function AnalyticsPage() {
           </div>
         </div>
 
-        {/* Rep leaderboard */}
         <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
           <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-5">
             Rep Leaderboard · Q2 2026
