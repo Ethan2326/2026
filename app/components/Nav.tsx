@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/coaching", label: "Coaching" },
   { href: "/meddic", label: "MEDDIC" },
   { href: "/analytics", label: "Analytics" },
+  { href: "/settings", label: "Settings" },
 ];
 
 export function Nav() {
@@ -53,6 +54,17 @@ export function Nav() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#E05252] animate-pulse" />
             Join call
+          </Link>
+          <Link
+            href="/settings"
+            title="Settings"
+            className={`hidden md:flex w-8 h-8 rounded-full items-center justify-center text-xs font-bold transition-colors ${
+              pathname === "/settings"
+                ? "bg-[#0F0F0F] text-[#F8F7F4]"
+                : "bg-[#E8E8E4] text-[#0F0F0F]/60 hover:bg-[#0F0F0F]/10"
+            }`}
+          >
+            SK
           </Link>
 
           {/* Mobile hamburger */}
