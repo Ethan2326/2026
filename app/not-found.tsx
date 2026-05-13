@@ -9,16 +9,10 @@ export default function NotFound() {
         This page doesn&apos;t exist — or the deal was already closed.
       </p>
       <div className="flex gap-3">
-        <Link
-          href="/dashboard"
-          className="bg-[#E8FF5A] text-[#0F0F0F] font-bold px-6 py-3 rounded-full text-sm hover:bg-[#E8FF5A]/80 transition-colors"
-        >
+        <Link href="/dashboard" className="bg-[#E8FF5A] text-[#0F0F0F] font-bold px-6 py-3 rounded-full text-sm hover:bg-[#E8FF5A]/80 transition-colors">
           Back to Pipeline
         </Link>
-        <Link
-          href="/"
-          className="bg-[#FFFFFF] text-[#0F0F0F] font-semibold px-6 py-3 rounded-full text-sm border border-[#E8E8E4] hover:border-[#0F0F0F]/20 transition-colors"
-        >
+        <Link href="/" className="bg-[#FFFFFF] text-[#0F0F0F] font-semibold px-6 py-3 rounded-full text-sm border border-[#E8E8E4] hover:border-[#0F0F0F]/20 transition-colors">
           Home
         </Link>
       </div>

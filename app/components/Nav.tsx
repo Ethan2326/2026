@@ -15,64 +15,34 @@ const LINKS = [
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 bg-[#F8F7F4]/90 backdrop-blur-sm border-b border-[#E8E8E4]">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="text-[#0F0F0F] font-black text-lg tracking-tight">
-            2026
-          </Link>
+          <Link href="/" className="text-[#0F0F0F] font-black text-lg tracking-tight">2026</Link>
           <LiveBadge />
         </div>
-
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {LINKS.map((l) => {
             const active = pathname === l.href || (l.href !== "/" && pathname.startsWith(l.href));
             return (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  active
-                    ? "bg-[#0F0F0F] text-[#F8F7F4]"
-                    : "text-[#0F0F0F]/60 hover:text-[#0F0F0F] hover:bg-[#0F0F0F]/5"
-                }`}
-              >
+              <Link key={l.href} href={l.href}
+                className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${active ? "bg-[#0F0F0F] text-[#F8F7F4]" : "text-[#0F0F0F]/60 hover:text-[#0F0F0F] hover:bg-[#0F0F0F]/5"}`}>
                 {l.label}
               </Link>
             );
           })}
         </nav>
-
         <div className="flex items-center gap-2">
-          <Link
-            href="/coaching"
-            className="hidden md:inline-flex items-center gap-1.5 bg-[#E8FF5A] text-[#0F0F0F] text-sm font-bold px-4 py-2 rounded-full hover:bg-[#E8FF5A]/80 transition-colors"
-          >
+          <Link href="/coaching" className="hidden md:inline-flex items-center gap-1.5 bg-[#E8FF5A] text-[#0F0F0F] text-sm font-bold px-4 py-2 rounded-full hover:bg-[#E8FF5A]/80 transition-colors">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E05252] animate-pulse" />
             Join call
           </Link>
-          <Link
-            href="/settings"
-            title="Settings"
-            className={`hidden md:flex w-8 h-8 rounded-full items-center justify-center text-xs font-bold transition-colors ${
-              pathname === "/settings"
-                ? "bg-[#0F0F0F] text-[#F8F7F4]"
-                : "bg-[#E8E8E4] text-[#0F0F0F]/60 hover:bg-[#0F0F0F]/10"
-            }`}
-          >
+          <Link href="/settings" title="Settings"
+            className={`hidden md:flex w-8 h-8 rounded-full items-center justify-center text-xs font-bold transition-colors ${pathname === "/settings" ? "bg-[#0F0F0F] text-[#F8F7F4]" : "bg-[#E8E8E4] text-[#0F0F0F]/60 hover:bg-[#0F0F0F]/10"}`}>
             SK
           </Link>
-
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-[#0F0F0F]/5 transition-colors"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
+          <button className="md:hidden p-2 rounded-lg hover:bg-[#0F0F0F]/5 transition-colors" onClick={() => setOpen(!open)} aria-label="Menu">
             <div className="flex flex-col gap-1.5 w-5">
               <span className={`h-0.5 bg-[#0F0F0F] rounded-full transition-all ${open ? "rotate-45 translate-y-2" : ""}`} />
               <span className={`h-0.5 bg-[#0F0F0F] rounded-full transition-all ${open ? "opacity-0" : ""}`} />
@@ -81,32 +51,18 @@ export function Nav() {
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-[#E8E8E4] bg-[#F8F7F4] px-6 py-4 flex flex-col gap-1">
           {LINKS.map((l) => {
             const active = pathname === l.href || (l.href !== "/" && pathname.startsWith(l.href));
             return (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                  active
-                    ? "bg-[#0F0F0F] text-[#F8F7F4]"
-                    : "text-[#0F0F0F]/70 hover:bg-[#0F0F0F]/5"
-                }`}
-              >
+              <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
+                className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${active ? "bg-[#0F0F0F] text-[#F8F7F4]" : "text-[#0F0F0F]/70 hover:bg-[#0F0F0F]/5"}`}>
                 {l.label}
               </Link>
             );
           })}
-          <Link
-            href="/coaching"
-            onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center gap-1.5 bg-[#E8FF5A] text-[#0F0F0F] text-sm font-bold px-4 py-2.5 rounded-xl"
-          >
+          <Link href="/coaching" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center gap-1.5 bg-[#E8FF5A] text-[#0F0F0F] text-sm font-bold px-4 py-2.5 rounded-xl">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E05252] animate-pulse" />
             Join live call
           </Link>

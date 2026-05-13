@@ -46,18 +46,10 @@ export interface Deal {
 
 export const DEALS: Deal[] = [
   {
-    id: 1,
-    company: "Acme Corp",
-    stage: "Proposal",
-    arr: "$120,000",
-    arrRaw: 120000,
-    owner: "Sarah K.",
-    score: 82,
-    close: "Jun 30, 2026",
-    lastActivity: "2h ago",
+    id: 1, company: "Acme Corp", stage: "Proposal", arr: "$120,000", arrRaw: 120000,
+    owner: "Sarah K.", score: 82, close: "Jun 30, 2026", lastActivity: "2h ago",
     meddic: ["Metrics", "Economic Buyer", "Identify Pain", "Champion"],
-    notes:
-      "David is highly engaged. Sarah Chen met twice — supportive but needs CFO sign-off. Security review is the final gate. Push to schedule a technical workshop before June.",
+    notes: "David is highly engaged. Sarah Chen met twice — supportive but needs CFO sign-off. Security review is the final gate.",
     contacts: [
       { name: "David Park", title: "RevOps Lead", role: "Champion", lastContact: "2h ago" },
       { name: "Sarah Chen", title: "VP Finance", role: "Economic Buyer", lastContact: "5d ago" },
@@ -76,18 +68,10 @@ export const DEALS: Deal[] = [
     ],
   },
   {
-    id: 2,
-    company: "NovaTech",
-    stage: "Discovery",
-    arr: "$84,000",
-    arrRaw: 84000,
-    owner: "James L.",
-    score: 61,
-    close: "Jul 31, 2026",
-    lastActivity: "1d ago",
+    id: 2, company: "NovaTech", stage: "Discovery", arr: "$84,000", arrRaw: 84000,
+    owner: "James L.", score: 61, close: "Jul 31, 2026", lastActivity: "1d ago",
     meddic: ["Metrics", "Identify Pain"],
-    notes:
-      "Early stage. Amy is engaged but hasn't confirmed who controls budget. Need to identify decision process before sending a proposal.",
+    notes: "Early stage. Amy is engaged but hasn't confirmed who controls budget.",
     contacts: [
       { name: "Amy Wu", title: "Sales Ops Manager", role: "Champion", lastContact: "1d ago" },
       { name: "Brad Allen", title: "VP Sales", role: "Economic Buyer", lastContact: "2w ago" },
@@ -103,18 +87,10 @@ export const DEALS: Deal[] = [
     ],
   },
   {
-    id: 3,
-    company: "Relay AI",
-    stage: "Negotiation",
-    arr: "$200,000",
-    arrRaw: 200000,
-    owner: "Maria T.",
-    score: 44,
-    close: "May 31, 2026",
-    lastActivity: "3d ago",
+    id: 3, company: "Relay AI", stage: "Negotiation", arr: "$200,000", arrRaw: 200000,
+    owner: "Maria T.", score: 44, close: "May 31, 2026", lastActivity: "3d ago",
     meddic: ["Economic Buyer", "Champion"],
-    notes:
-      "Deal is at risk. Champion went quiet after procurement pushed back on pricing. Need to re-engage Tom Weiss directly and reframe value before close date.",
+    notes: "Deal is at risk. Champion went quiet after procurement pushed back on pricing.",
     contacts: [
       { name: "Lisa Ng", title: "Sales Ops", role: "Champion", lastContact: "3d ago" },
       { name: "Tom Weiss", title: "CRO", role: "Economic Buyer", lastContact: "1w ago" },
@@ -131,18 +107,10 @@ export const DEALS: Deal[] = [
     ],
   },
   {
-    id: 4,
-    company: "Stackbase",
-    stage: "Closed Won",
-    arr: "$60,000",
-    arrRaw: 60000,
-    owner: "Tom B.",
-    score: 91,
-    close: "May 12, 2026",
-    lastActivity: "Just now",
+    id: 4, company: "Stackbase", stage: "Closed Won", arr: "$60,000", arrRaw: 60000,
+    owner: "Tom B.", score: 91, close: "May 12, 2026", lastActivity: "Just now",
     meddic: ["Metrics", "Economic Buyer", "Decision Criteria", "Decision Process", "Identify Pain", "Champion"],
-    notes:
-      "Won. All MEDDIC criteria were confirmed before proposal. Smooth close — 6-week cycle. Great reference account potential.",
+    notes: "Won. All MEDDIC criteria confirmed. Smooth close — 6-week cycle. Great reference account.",
     contacts: [
       { name: "Raj Patel", title: "Head of Engineering", role: "Champion", lastContact: "Just now" },
       { name: "Chloe Marsh", title: "CFO", role: "Economic Buyer", lastContact: "2d ago" },

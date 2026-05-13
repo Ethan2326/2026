@@ -6,11 +6,7 @@ export const metadata: Metadata = {
   description: "Real-time deal scores, AI suggestions, and MEDDIC tracking.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full">{children}</body>

@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Brand palette */
   --color-bg:       #F8F7F4;
   --color-surface:  #FFFFFF;
   --color-ink:      #0F0F0F;
@@ -10,22 +9,14 @@
   --color-gold:     #B8A060;
   --color-alert:    #E05252;
   --color-border:   #E8E8E4;
-
-  /* Semantic aliases */
   --color-background: var(--color-bg);
   --color-foreground: var(--color-ink);
-
-  /* Typography */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  /* Shadows */
   --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
   --shadow-lifted: 0 4px 16px 0 rgb(0 0 0 / 0.08);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   background: var(--color-bg);
