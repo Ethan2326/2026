@@ -40,14 +40,11 @@ export default function CoachingPage() {
   const [score, setScore] = useState(72);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Simulate call progressing
   useEffect(() => {
     const interval = setInterval(() => {
       setElapsed((e) => {
         const next = e + 1;
-        // reveal a new transcript line every ~4s
         setVisibleLines((l) => Math.min(l + (next % 4 === 0 ? 1 : 0), TRANSCRIPT_LINES.length));
-        // bump score slightly
         setScore((s) => Math.min(s + (next % 8 === 0 ? 1 : 0), 95));
         return next;
       });
@@ -55,13 +52,11 @@ export default function CoachingPage() {
     return () => clearInterval(interval);
   }, []);
 
-  // Surface suggestions based on visible lines
   useEffect(() => {
     const visible = SUGGESTION_TIMELINE.filter((s) => s.at <= visibleLines);
     setSuggestions(visible);
   }, [visibleLines]);
 
-  // Auto-scroll transcript
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 9999, behavior: "smooth" });
   }, [visibleLines]);
@@ -74,18 +69,14 @@ export default function CoachingPage() {
       <Nav />
 
       <div className="max-w-6xl mx-auto px-6 py-10">
-        {/* Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-black text-[#0F0F0F] tracking-tight">Live Coaching</h1>
-            <p className="text-sm text-[#0F0F0F]/50 mt-0.5">
-              Real-time deal intelligence during your calls
-            </p>
+            <p className="text-sm text-[#0F0F0F]/50 mt-0.5">Real-time deal intelligence during your calls</p>
           </div>
           <LiveBadge />
         </div>
 
-        {/* Call selector */}
         <div className="flex gap-3 mb-8 flex-wrap">
           {CALLS.map((c) => (
             <button
@@ -107,9 +98,7 @@ export default function CoachingPage() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Transcript */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            {/* Call status bar */}
             <div className="bg-[#0F0F0F] rounded-2xl p-5 flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <LiveBadge />
@@ -129,7 +118,6 @@ export default function CoachingPage() {
               </div>
             </div>
 
-            {/* Transcript scroll area */}
             <div
               ref={scrollRef}
               className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 h-[420px] overflow-y-auto flex flex-col gap-4 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]"
@@ -169,11 +157,8 @@ export default function CoachingPage() {
               )}
             </div>
 
-            {/* Score timeline bar */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
-              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3">
-                Score over call
-              </p>
+              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3">Score over call</p>
               <div className="flex items-end gap-1 h-12">
                 {[68, 70, 71, 72, 73, 73, 75, 74, 76, 77, 78, score].slice(-12).map((v, i) => (
                   <div
@@ -181,8 +166,7 @@ export default function CoachingPage() {
                     className="flex-1 rounded-t-sm transition-all"
                     style={{
                       height: `${((v - 60) / 40) * 100}%`,
-                      backgroundColor:
-                        v >= 75 ? "#E8FF5A" : v >= 50 ? "#B8A060" : "#E05252",
+                      backgroundColor: v >= 75 ? "#E8FF5A" : v >= 50 ? "#B8A060" : "#E05252",
                       opacity: 0.4 + (i / 12) * 0.6,
                     }}
                   />
@@ -191,7 +175,6 @@ export default function CoachingPage() {
             </div>
           </div>
 
-          {/* Right: live suggestions */}
           <div className="flex flex-col gap-4">
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <div className="flex items-center gap-2 mb-4">
@@ -202,25 +185,17 @@ export default function CoachingPage() {
               </div>
               <div className="flex flex-col gap-3">
                 {suggestions.length === 0 ? (
-                  <p className="text-sm text-[#0F0F0F]/40 italic">
-                    Suggestions will appear as the call progresses…
-                  </p>
+                  <p className="text-sm text-[#0F0F0F]/40 italic">Suggestions will appear as the call progresses…</p>
                 ) : (
-                  suggestions
-                    .slice()
-                    .reverse()
-                    .map((s) => (
-                      <SuggestionCard key={s.title} title={s.title} body={s.body} tag={s.tag} />
-                    ))
+                  suggestions.slice().reverse().map((s) => (
+                    <SuggestionCard key={s.title} title={s.title} body={s.body} tag={s.tag} />
+                  ))
                 )}
               </div>
             </div>
 
-            {/* Talk ratio */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
-              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-4">
-                Talk Ratio
-              </p>
+              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-4">Talk Ratio</p>
               <div className="flex gap-1 rounded-full overflow-hidden h-3 mb-3">
                 <div className="bg-[#E8FF5A]" style={{ width: "42%" }} />
                 <div className="bg-[#E8E8E4]" style={{ width: "58%" }} />
@@ -229,27 +204,20 @@ export default function CoachingPage() {
                 <span className="font-semibold text-[#0F0F0F]">Rep — 42%</span>
                 <span className="text-[#0F0F0F]/50">Prospect — 58%</span>
               </div>
-              <p className="text-xs text-[#B8A060] mt-2">
-                Good balance. Target is 40/60.
-              </p>
+              <p className="text-xs text-[#B8A060] mt-2">Good balance. Target is 40/60.</p>
             </div>
 
-            {/* Key topics */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
-              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3">
-                Topics Detected
-              </p>
+              <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3">Topics Detected</p>
               <div className="flex flex-wrap gap-2">
-                {["ROI / Metrics", "Security", "Implementation", "Decision Process", "Stakeholders"].map(
-                  (t) => (
-                    <span
-                      key={t}
-                      className="text-xs bg-[#F8F7F4] border border-[#E8E8E4] text-[#0F0F0F]/70 font-medium px-2.5 py-1 rounded-full"
-                    >
-                      {t}
-                    </span>
-                  )
-                )}
+                {["ROI / Metrics", "Security", "Implementation", "Decision Process", "Stakeholders"].map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs bg-[#F8F7F4] border border-[#E8E8E4] text-[#0F0F0F]/70 font-medium px-2.5 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

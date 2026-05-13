@@ -35,7 +35,6 @@ export default function DashboardPage() {
       <Nav />
 
       <div className="max-w-6xl mx-auto px-6 py-10">
-        {/* Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-black text-[#0F0F0F] tracking-tight">Pipeline</h1>
@@ -61,7 +60,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* LIST VIEW */}
         {view === "list" && (
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 flex flex-col gap-4">
@@ -101,7 +99,6 @@ export default function DashboardPage() {
               ))}
             </div>
 
-            {/* Right panel */}
             <div className="flex flex-col gap-4">
               <div className="bg-[#0F0F0F] rounded-2xl p-6 flex flex-col items-center gap-2">
                 <p className="text-xs text-[#F8F7F4]/40 font-semibold uppercase tracking-widest">
@@ -129,7 +126,6 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* BOARD VIEW */}
         {view === "board" && (
           <div className="overflow-x-auto pb-4">
             <div className="flex gap-4 min-w-max">
@@ -172,7 +168,6 @@ export default function DashboardPage() {
                         </Link>
                       ))
                     )}
-                    {/* Stage total */}
                     {stageDeals.length > 0 && (
                       <div className="px-1 pt-1 border-t border-[#E8E8E4]">
                         <p className="text-xs text-[#0F0F0F]/40 font-medium">
@@ -187,7 +182,6 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Live feed */}
         <div className="mt-10 bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
           <div className="flex items-center gap-2 mb-5">
             <p className="text-sm font-bold text-[#0F0F0F]">Activity Feed</p>

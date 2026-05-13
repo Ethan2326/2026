@@ -130,12 +130,9 @@ export default function MeddicPage() {
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="mb-8">
           <h1 className="text-2xl font-black text-[#0F0F0F] tracking-tight">MEDDIC Tracker</h1>
-          <p className="text-sm text-[#0F0F0F]/50 mt-0.5">
-            Toggle each criterion to track qualification coverage per deal
-          </p>
+          <p className="text-sm text-[#0F0F0F]/50 mt-0.5">Toggle each criterion to track qualification coverage per deal</p>
         </div>
 
-        {/* Deal selector */}
         <div className="flex gap-3 mb-8 flex-wrap">
           {deals.map((d) => (
             <button
@@ -150,10 +147,7 @@ export default function MeddicPage() {
               {d.company}
               <span
                 className="text-xs font-bold tabular-nums"
-                style={{
-                  color:
-                    d.score >= 75 ? "#E8FF5A" : d.score >= 50 ? "#B8A060" : "#E05252",
-                }}
+                style={{ color: d.score >= 75 ? "#E8FF5A" : d.score >= 50 ? "#B8A060" : "#E05252" }}
               >
                 {d.score}
               </span>
@@ -162,9 +156,7 @@ export default function MeddicPage() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Left: MEDDIC pills + criteria detail */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            {/* Score + pills card */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <div className="flex items-center justify-between mb-6">
                 <div>
@@ -179,7 +171,6 @@ export default function MeddicPage() {
               </p>
             </div>
 
-            {/* Criteria detail cards */}
             <div className="grid sm:grid-cols-2 gap-4">
               {ALL_FIELDS.map((f) => {
                 const done = completed.includes(f);
@@ -192,12 +183,8 @@ export default function MeddicPage() {
                     }`}
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className={`w-2 h-2 rounded-full ${done ? "bg-[#E8FF5A]" : "bg-[#E8E8E4]"}`}
-                      />
-                      <span className="text-xs font-bold text-[#0F0F0F] uppercase tracking-wide">
-                        {f}
-                      </span>
+                      <span className={`w-2 h-2 rounded-full ${done ? "bg-[#E8FF5A]" : "bg-[#E8E8E4]"}`} />
+                      <span className="text-xs font-bold text-[#0F0F0F] uppercase tracking-wide">{f}</span>
                     </div>
                     <p className="text-xs text-[#0F0F0F]/50 mb-2">{DEFINITIONS[f].short}</p>
                     {note ? (
@@ -211,12 +198,9 @@ export default function MeddicPage() {
             </div>
           </div>
 
-          {/* Right: gaps + suggestions */}
           <div className="flex flex-col gap-4">
             <div className="bg-[#0F0F0F] rounded-2xl p-5">
-              <p className="text-xs text-[#F8F7F4]/40 font-semibold uppercase tracking-widest mb-4">
-                Coverage
-              </p>
+              <p className="text-xs text-[#F8F7F4]/40 font-semibold uppercase tracking-widest mb-4">Coverage</p>
               <div className="flex items-end gap-2 mb-3">
                 <span className="text-4xl font-black text-[#E8FF5A]">{completed.length}</span>
                 <span className="text-[#F8F7F4]/40 text-lg mb-1">/ {ALL_FIELDS.length}</span>
@@ -231,17 +215,10 @@ export default function MeddicPage() {
 
             {gaps.length > 0 && (
               <div>
-                <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3 px-1">
-                  Close These Gaps
-                </p>
+                <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3 px-1">Close These Gaps</p>
                 <div className="flex flex-col gap-3">
                   {gaps.map((f) => (
-                    <SuggestionCard
-                      key={f}
-                      title={gapSuggestions[f].title}
-                      body={gapSuggestions[f].body}
-                      tag={f}
-                    />
+                    <SuggestionCard key={f} title={gapSuggestions[f].title} body={gapSuggestions[f].body} tag={f} />
                   ))}
                 </div>
               </div>

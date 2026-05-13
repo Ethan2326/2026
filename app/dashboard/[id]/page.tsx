@@ -20,7 +20,6 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
       <Nav />
 
       <div className="max-w-6xl mx-auto px-6 py-10">
-        {/* Breadcrumb */}
         <div className="mb-8">
           <Link href="/dashboard" className="text-sm text-[#0F0F0F]/40 hover:text-[#0F0F0F] transition-colors">
             ← Pipeline
@@ -42,9 +41,7 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Left col */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            {/* MEDDIC */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-4">
                 MEDDIC · {meddic.length}/6 covered
@@ -58,7 +55,6 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
               </div>
             </div>
 
-            {/* Notes */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest">Deal Notes</p>
@@ -80,7 +76,6 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
               )}
             </div>
 
-            {/* Timeline */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-6 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-5">
                 Activity Timeline
@@ -99,9 +94,7 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
             </div>
           </div>
 
-          {/* Right col */}
           <div className="flex flex-col gap-4">
-            {/* Contacts */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-4">Contacts</p>
               <div className="flex flex-col gap-3">
@@ -127,7 +120,6 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
               </div>
             </div>
 
-            {/* Suggestions */}
             <div>
               <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3 px-1">
                 Top Suggestions
@@ -139,7 +131,6 @@ export default function DealPage({ params }: { params: Promise<{ id: string }> }
               </div>
             </div>
 
-            {/* Quick actions */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-5 shadow-[0_1px_3px_0_rgb(0_0_0/0.06)]">
               <p className="text-xs font-semibold text-[#0F0F0F]/40 uppercase tracking-widest mb-3">Quick Actions</p>
               <div className="flex flex-col gap-2">
