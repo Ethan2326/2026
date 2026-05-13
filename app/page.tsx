@@ -51,7 +51,6 @@ export default function Home() {
     <div className="min-h-screen bg-[#F8F7F4]">
       <Nav />
 
-      {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
         <div className="flex flex-col items-center text-center gap-8">
           <div className="flex items-center gap-2">
@@ -86,7 +85,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Score preview strip */}
       <section className="bg-[#0F0F0F] py-16">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-center text-[#F8F7F4]/40 text-xs font-semibold uppercase tracking-widest mb-10">
@@ -107,7 +105,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-3xl md:text-4xl font-black text-[#0F0F0F] text-center mb-14 tracking-tight">
           Everything you need in one place
@@ -126,7 +123,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Suggestions preview */}
       <section className="bg-[#FFFFFF] border-y border-[#E8E8E4] py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-14 items-center">
@@ -154,7 +150,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MEDDIC preview */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-14 items-center">
           <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E8E4] p-8 shadow-[0_4px_16px_0_rgb(0_0_0/0.08)]">
@@ -187,7 +182,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing */}
       <section className="max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-3xl md:text-4xl font-black text-[#0F0F0F] text-center tracking-tight mb-4">
           Simple pricing
@@ -268,15 +262,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA banner */}
       <section className="bg-[#0F0F0F] py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-black text-[#F8F7F4] tracking-tight mb-4">
             Ready to close more deals?
           </h2>
-          <p className="text-[#F8F7F4]/50 mb-8 text-lg">
-            Set up in 10 minutes. No CRM migration required.
-          </p>
+          <p className="text-[#F8F7F4]/50 mb-8 text-lg">Set up in 10 minutes. No CRM migration required.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/signup"
@@ -294,7 +285,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-[#E8E8E4] py-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <span className="font-bold text-[#0F0F0F]">2026</span>
@@ -311,9 +301,7 @@ export default function Home() {
               </Link>
             ))}
           </nav>
-          <p className="text-sm text-[#0F0F0F]/40">
-            © {new Date().getFullYear()} 2026
-          </p>
+          <p className="text-sm text-[#0F0F0F]/40">© {new Date().getFullYear()} 2026</p>
         </div>
       </footer>
     </div>
